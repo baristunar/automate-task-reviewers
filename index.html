@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprint Reviewer Distributor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <main class="container">
+      <header class="hero">
+        <p class="eyebrow">Sprint Review Balance</p>
+        <h1>Task Reviewer Distribution Panel</h1>
+        <p class="subtitle">
+          Balance review workload by story points and auto-assign at least 2 reviewers to each task.
+        </p>
+      </header>
+
+      <section class="panel grid grid-2">
+        <article class="card">
+          <div class="card-head">
+            <h2>Add / Edit Task</h2>
+            <span class="hint">Story point is required</span>
+          </div>
+
+          <form id="taskForm" class="stack">
+            <input type="hidden" id="taskId" />
+
+            <label for="taskTitle">Task Title</label>
+            <input id="taskTitle" type="text" required />
+
+            <label for="taskPoints">Story Point</label>
+            <input id="taskPoints" type="number" min="1" max="100" value="1" required />
+
+            <div class="actions-row">
+              <button type="submit" class="btn btn-primary" id="saveTaskBtn">Save Task</button>
+              <button type="button" class="btn btn-ghost" id="cancelEditBtn" hidden>
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+
+          <div class="import-area">
+            <label for="taskImportFile">Upload Tasks via CSV</label>
+            <input id="taskImportFile" type="file" accept=".csv" />
+            <p class="small">
+              Required columns: <strong>Task ID</strong>, <strong>Task Name</strong>,
+              <strong>SP</strong>.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h2>Reviewer Pool</h2>
+            <span class="hint">At least 2 reviewers required</span>
+          </div>
+
+          <form id="reviewerForm" class="inline-form">
+            <input id="reviewerName" type="text" placeholder="Reviewer full name" required />
+            <button type="submit" class="btn btn-primary">Add Reviewer</button>
+          </form>
+
+          <ul id="reviewerList" class="pill-list"></ul>
+
+          <div class="auto-area">
+            <div class="reviewer-actions">
+              <button id="autoAssignBtn" class="btn btn-accent" type="button">
+                Auto-Assign Reviewers
+              </button>
+              <button id="clearReviewersBtn" class="btn btn-danger" type="button">
+                Clear All Reviewers
+              </button>
+            </div>
+            <p class="small">
+              After assignment, each task will have at least 2 reviewers and total point load will
+              be balanced.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Task List</h2>
+          <div class="list-head-actions">
+            <span id="stats" class="hint"></span>
+            <button id="downloadCsvBtn" type="button" class="btn btn-ghost">Download CSV</button>
+            <button id="clearTasksBtn" type="button" class="btn btn-danger">Clear Task List</button>
+          </div>
+        </div>
+        <div id="taskList" class="task-list"></div>
+      </section>
+    </main>
+
+    <div id="confirmModal" class="modal-overlay" hidden>
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="confirmTitle"
+        aria-describedby="confirmMessage"
+      >
+        <h3 id="confirmTitle" class="modal-title">Confirm Action</h3>
+        <p id="confirmMessage" class="modal-message">Are you sure?</p>
+        <div class="modal-actions">
+          <button id="confirmCancelBtn" type="button" class="btn btn-ghost">Cancel</button>
+          <button id="confirmApproveBtn" type="button" class="btn btn-danger">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
