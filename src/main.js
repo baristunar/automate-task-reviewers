@@ -1,4 +1,4 @@
-import { MIN_REVIEWERS_PER_TASK } from "./config.js";
+import { MIN_REVIEWERS_PER_TASK } from "./config/index.js";
 import { exportTasksToCsv, importTasksFromCsvText } from "./app/csv.js";
 import { el } from "./app/dom.js";
 import { confirmAction } from "./app/modal.js";

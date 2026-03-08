@@ -1,11 +1,15 @@
-import { CSV_HEADER_SP, CSV_HEADER_TASK_ID, CSV_HEADER_TASK_NAME } from "../config.js";
+import {
+  CSV_HEADER_SP,
+  CSV_HEADER_TASK_ID,
+  CSV_HEADER_TASK_NAME,
+} from "../config/index.js";
 import {
   csvEscape,
   downloadTextAsFile,
   formatDateForFileName,
   normalizeHeader,
   parseCsv,
-} from "../utils.js";
+} from "../utils/index.js";
 
 export function exportTasksToCsv(state) {
   const maxReviewerCount = state.tasks.reduce(

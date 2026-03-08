@@ -1,6 +1,6 @@
 import { el } from "./dom.js";
 import { calculateCurrentLoad } from "./state.js";
-import { escapeHtml } from "../utils.js";
+import { escapeHtml } from "../utils/index.js";
 
 export function renderApp(state, uiState, handlers) {
   renderReviewerList(state, handlers);

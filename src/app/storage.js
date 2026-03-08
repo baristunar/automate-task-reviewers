@@ -1,4 +1,4 @@
-import { STORAGE_KEY } from "../config.js";
+import { STORAGE_KEY } from "../config/index.js";
 import { state } from "./state.js";
 
 export function persistState() {

@@ -1,4 +1,4 @@
-import { MIN_REVIEWERS_PER_TASK } from "../config.js";
+import { MIN_REVIEWERS_PER_TASK } from "../config/index.js";
 
 export function autoAssignReviewers(state) {
   const reviewerLoad = {};
