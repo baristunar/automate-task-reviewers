@@ -111,15 +111,9 @@ Husky is configured with a `pre-commit` hook that runs:
 
 This prevents commits with obvious quality or syntax regressions.
 
-## Deploy to Vercel
+## Deployment
 
-1. Push repository to GitHub.
-2. In Vercel, choose `Add New...` > `Project`.
-3. Connect the repository.
-4. Framework preset: `Other`.
-5. Build command: `npm run build`.
-6. Output directory: `dist`.
-7. Deploy.
+Live URL: `https://automate-task-reviewers.vercel.app/`
 
 ## Notes
 
