@@ -115,6 +115,18 @@ This prevents commits with obvious quality or syntax regressions.
 
 Live URL: `https://automate-task-reviewers.vercel.app/`
 
+## Contribution
+
+1. Fork the repository and create a feature branch.
+2. Install dependencies with `npm install`.
+3. Run checks before commit:
+
+- `npm run check`
+- `npm run lint`
+- `npm run format:check`
+
+4. Open a pull request with a clear summary and screenshots (if UI changed).
+
 ## Notes
 
 - Data is stored in the browser (`localStorage`).
