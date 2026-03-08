@@ -113,7 +113,7 @@ This prevents commits with obvious quality or syntax regressions.
 
 ## Deployment
 
-Live URL: `https://automate-task-reviewers.vercel.app/`
+Live URL: https://automate-task-reviewers.vercel.app/
 
 ## Contribution
 
